@@ -1,0 +1,97 @@
+#fondo{
+    background-color: lightblue;
+    position: fixed;
+    margin: 0px;
+    height: 11%;
+    //padding: 10px;
+    width: 100%;
+    z-index: 1;
+}
+
+#titulo{
+    font-size: 40px;
+    margin-left: 50px;
+    margin-top: 15px;
+    max-width: 80px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+#bCarrito{
+    height: 40px;
+    width: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    left: 1400px;
+    bottom: 60px;
+}
+
+#bLogin{
+    height: auto;
+    position: absolute;
+    top: 35%;
+    left: 80%;
+    // left: 1230px;
+    // bottom: 2%;
+    cursor: pointer;
+}
+
+#bAdmin{
+    height: 40px;
+    position: relative;
+    left: 800px;
+    bottom: 60px;
+}
+
+.userLogged{
+    height: 40px;
+    position: relative;
+    left: 1100px;
+    bottom: 60px;
+    //width: auto;
+    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    //background-color: honeydew;
+    //max-width: 100px;
+    //margin-top: 10px;
+}
+
+.userLogged .cerrarSesion{
+    display: none;
+}
+
+.userLogged:hover .userName{
+    display: none;
+}
+
+.userLogged:hover .cerrarSesion{
+    display: inline;
+}
+
+#bBuscar{
+    height: 22px;
+    position: relative;
+    top: 2px;
+}
+
+#categorias{
+    position: absolute;
+    left: 17%;
+    bottom: 2%;
+    // left: 200px;
+    // bottom: 52px;
+}
+
+#buscador{
+    position: relative;
+    left: 650px;
+    bottom: 83px;
+}
+
+.bFiltrar{
+    cursor: pointer;
+}
+
+* {
+    margin: 0;
+}

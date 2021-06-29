@@ -1,0 +1,15 @@
+<body>
+
+<form [formGroup]="recuperar"  (ngSubmit)="recuperarClave()">
+    <div id="inicioSesion">
+        Ingrese correo electrónico:
+        <br>
+        <input formControlName="email">
+        <br>
+        <button>Enviar</button>
+    </div>
+</form>
+
+<button id="bVolver" (click)="volver()">Volver</button>
+
+</body>

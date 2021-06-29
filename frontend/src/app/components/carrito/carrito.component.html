@@ -1,0 +1,19 @@
+<body>
+
+<div class="cajaC">
+    <h1>Carrito de compras:</h1>
+    <div class="producto" *ngFor="let item of serv.carrito">
+        <p><b>{{item.producto.nombre}}({{item.producto.precio}})</b> X {{item.cantidad}}  = ${{item.cantidad * +(item.producto.precio.replace('$',''))}}</p>
+        <button (click)="eliminarP(item)">eliminar</button>
+        <br>
+    </div>
+</div>
+
+    <button class="bComprar" *ngIf="serv.carrito.length>=1" (click)="comprar()">Comprar</button>
+    <br>
+    <button class="bVaciar" *ngIf="serv.carrito.length>=1" (click)="vaciar()">Vaciar Carrito</button>
+
+<br>
+<button id="bVolver" (click)="volver()">Volver</button>
+
+</body>

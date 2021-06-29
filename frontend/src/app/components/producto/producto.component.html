@@ -1,0 +1,78 @@
+<link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+
+<body>
+  <div class="cajaP">
+    <div class="producto-img">
+      <img src={{product.imagen}} height="420" width="327">
+    </div>
+    <div class="producto-info">
+      <div class="producto-texto">
+        <p id="categoria">{{product.categorias}}</p>
+        <h1>{{product.nombre}}</h1>
+        <br>
+        <p>{{product.descripcion}}</p>
+      </div>
+      <div class="producto-precio-boton">
+        <p class="precio">{{product.precio}}</p>
+        <div *ngIf="this.serv.conectado;else sinSesionCompra">
+          <button *ngIf="product.stock!=0;else noDisponible" type="button" (click)="anadirCarrito()">Añadir al carrito</button>
+          <ng-template #noDisponible>
+              <button id="noDisponible" type="button">No disponible</button>
+          </ng-template>
+        </div>
+        <ng-template #sinSesionCompra>
+            <button id="sinSesion" type="button">Inicie sesión para comprar</button>
+        </ng-template>
+        <p class="stock">Stock: {{product.stock}}</p>
+      </div>
+    </div>
+    <div class="producto-calif">
+        <p>Calificación</p>
+        <br>
+        <p id="puntaje">{{promCalifString}}/5.0</p>
+        <p id="cantPuntajes">De {{this.product.calificacion.length}} calificaciones</p>
+        <form [formGroup]="calificaciones" (ngSubmit)="calificar()">
+          <div *ngIf="this.serv.conectado;else sinSesionCalificar">
+            <div *ngIf="!yaCalificado; else calificado">
+            <div class="stars">
+              <input type="radio" id="star5" value="5" formControlName="puntaje" />
+              <label for="star5" title="text">5 stars</label>
+              <input type="radio" id="star4" value="4" formControlName="puntaje" />
+              <label for="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" value="3" formControlName="puntaje" />
+              <label for="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" value="2" formControlName="puntaje" />
+              <label for="star2" title="text">2 stars</label> 
+              <input type="radio" id="star1" value="1" formControlName="puntaje" />
+              <label for="star1" title="text">1 star</label>
+              <p id="valores">1 2 3 4 5</p>
+            </div>
+            </div>
+            <ng-template #calificado>
+              <p id="iniciaSesion">Ya has calificado este producto.</p>
+            </ng-template>
+            <button class="bCalificar">Calificar</button>
+          </div>
+          </form>
+          <ng-template #sinSesionCalificar>
+              <p id="iniciaSesion">Inicia sesión para calificar.</p>
+          </ng-template>
+    </div>
+  </div>
+<div class="cajaC">
+    <h1>Comentarios:</h1>
+    <div class="comentario" *ngFor="let item of comentarios">
+        <p><b>{{item.nombre}}</b> dice: {{item.comentario}}</p>
+        <br>
+    </div>
+    <form [formGroup]="seccionComentarios" (ngSubmit)="comentar()">
+    <div *ngIf="this.serv.conectado;else sinSesion">
+        <textarea class="textAreaComentario" formControlName="comentario"></textarea>
+        <button>Comentar</button>
+    </div>
+    </form>
+    <ng-template #sinSesion>
+      <p id="iniciaSesionComment">Inicia sesión para comentar.</p>
+    </ng-template>
+</div>
+</body>

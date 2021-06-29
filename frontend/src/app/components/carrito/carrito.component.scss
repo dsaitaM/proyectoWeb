@@ -1,0 +1,83 @@
+body {
+    background-color: #fdf1ec;
+    min-height: 100%;
+    height: auto ;
+    margin: 0px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+.cajaC {
+    height: auto;
+    width: 1390px;
+    margin-left: 50px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 7px 7px 7px 7px;
+    background-color: #f6f6f6;
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .producto{
+    margin-bottom: 20px;
+    margin-left: 15px;
+    height: auto;
+    height: 50px;
+    width: 1360px;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: none;
+    box-shadow: 5px 6px 6px 2px #c5c4c4; //#e9ecef
+    border-radius: 4px
+}
+
+.bComprar{
+  position: relative;
+  left: 80%;
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+  margin: 15px 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #96CC39;
+  cursor: pointer;
+  outline: none;
+}
+
+.bVaciar{
+  position: relative;
+  bottom: 30%;
+  left: 2%;
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+  margin: -750px 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #ec5161;
+  cursor: pointer;
+  outline: none;
+}
+
+#bVolver{
+    margin-left: 50%;
+    margin-top: 4%;
+}

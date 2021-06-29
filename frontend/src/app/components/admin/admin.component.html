@@ -1,0 +1,28 @@
+<body>
+
+<div class="cajaC">
+    <h1>Reporte usuarios:</h1>
+    <div class="usuarios" *ngFor="let user of listaUsuarios; let i=index">
+       <b>Usuario N°{{i+1}}:</b> {{user.nombres}} {{user.apellidos}}, Rut: {{user.rut}}
+       <br>Región: {{user.region}}, Comuna: {{user.comuna}}, Dirección: {{user.direccion}} 
+       <br>Mail: {{user.email}} 
+       <br>Admin: <span  *ngIf="user.admin;else noAdmin"><b>SI</b></span><ng-template #noAdmin><b>NO</b></ng-template>
+    <br>
+    <br>
+    </div>
+</div>
+
+<div class="cajaC">
+    <h1>Reporte de Pedidos</h1>
+    <div class="pedidos" *ngFor="let pedido of reportePedidos; let i=index">
+        <b>{{pedido.nombreUsuario}}</b> ha comprado:
+        <div>{{pedido.pedido}}</div>
+        <br>
+    </div>
+</div>
+
+
+<br>
+<button id="bVolver" (click)="volver()">Volver</button>
+
+</body>

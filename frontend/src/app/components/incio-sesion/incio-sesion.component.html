@@ -1,0 +1,64 @@
+<body> 
+    <form [formGroup]="registro"  (ngSubmit)="registrar()">
+    <div class="registro">
+        Registro
+        <br>
+        <label>Nombres </label>
+        <input formControlName="nombres">
+        <br>
+        <label>Apellidos </label>
+        <input formControlName="apellidos">
+        <br>
+        <label>Dirección </label>
+        <input formControlName="direccion">
+        <br>
+        <label>RUT </label>
+        <input formControlName="rut">
+        <br>
+        <label>Región </label>
+        <div ng-controller="regionCtr">
+        <select class="regiones" formControlName="region"> 
+            <option *ngFor="let region of listaRegiones" (click)="changeRegion(region)" value="{{region.valor}}">{{region.region}}</option>
+        </select>
+        <br>
+        <label>Comuna </label>
+        <select formControlName="comuna"> 
+            <option *ngFor="let comuna of comunasRegion" value="{{comuna.comuna}}">{{comuna.comuna}}</option>
+        </select>
+        </div>
+        <br>
+        <label>Correo Electrónico </label>
+        <input formControlName="email" type="email">
+        <br>
+        <label>Constraseña </label>
+        <input formControlName="password">
+        <br>
+        <label>Confirme constraseña </label>
+        <input formControlName="passwordConfirm">
+        <br>
+        <button>Registrar</button>
+    </div>
+    </form>
+    
+    
+    <div class="inicioSesion">
+        <form [formGroup]="ingreso"  (ngSubmit)="ingresar()">
+        Ya tengo una cuenta
+        <br>
+        <label>RUT </label>
+        <input formControlName="rut">
+        <br>
+        <label>Constraseña </label>
+        <input formControlName="password" type="password">
+        <br>
+        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha" class="captcha"></ngx-recaptcha2>
+        <br>
+        <button>Ingresar</button>
+        </form>
+    <button id="bRecuperarPass" (click)="recuperarClave()">Olvidé mi contraseña</button>
+    </div>
+
+    <button id="bVolver" (click)="volver()">Volver</button>
+</body>
+
+

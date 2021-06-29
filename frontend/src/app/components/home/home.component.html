@@ -1,0 +1,94 @@
+<body>
+
+<div>
+    <div class="contenedor">
+        <div *ngFor="let item of productos">
+        <div class="producto" *ngIf="item.categorias=='Ropa' && this.serv.ropa">
+        <img src={{item.imagen}} height="220" width="227" style="width:100%" (click)="clickProducto(item.nombre,item.descripcion,item.categorias,item.precio,item.stock,item.id)">
+        <p (click)="clickProducto(item.nombre,item.descripcion,item.categorias,item.precio,item.stock,item.id)" class="nombre">{{item.nombre}}</p>
+        <p class="categoria">{{item.categorias}}</p>
+        <p class="precio">{{item.precio}}</p>
+        <p class="stock">Stock:{{item.stock}}</p>
+        <div *ngIf="this.serv.conectado;else sinSesionCompra">
+            <button *ngIf="item.stock!=0;else noDisponible" type="button" (click)="anadirCarrito(item.id)">Añadir al carrito</button>
+            <ng-template #noDisponible>
+                <button id="noDisponible" type="button">No disponible</button>
+            </ng-template>
+          </div>
+          <ng-template #sinSesionCompra>
+              <button id="sinSesion" type="button">Inicie sesión para comprar</button>
+          </ng-template>
+        </div>
+        <div class="producto" *ngIf="item.categorias=='Tecnologia' && this.serv.tecnologia">
+            <img src={{item.imagen}} style="width:100%" (click)="clickProducto(item.nombre,item.descripcion,item.categorias,item.precio,item.stock,item.id)">
+            <p (click)="clickProducto(item.nombre,item.descripcion,item.categorias,item.precio,item.stock,item.id)" class="nombre">{{item.nombre}}</p>
+            <p class="categoria">{{item.categorias}}</p>
+            <p class="precio">{{item.precio}}</p>
+            <p class="stock">Stock:{{item.stock}}</p>
+            <div *ngIf="this.serv.conectado;else sinSesionCompra">
+                <button *ngIf="item.stock!=0;else noDisponible" type="button" (click)="anadirCarrito(item.id)">Añadir al carrito</button>
+                <ng-template #noDisponible>
+                    <button id="noDisponible" type="button">No disponible</button>
+                </ng-template>
+              </div>
+              <ng-template #sinSesionCompra>
+                  <button id="sinSesion" type="button">Inicie sesión para comprar</button>
+              </ng-template>
+            </div>
+        
+            <div class="producto" *ngIf="item.categorias=='Deportes' && this.serv.deportes">
+                <img src={{item.imagen}} style="width:100%" (click)="clickProducto(item.nombre,item.descripcion,item.categorias,item.precio,item.stock,item.id)">
+                <p (click)="clickProducto(item.nombre,item.descripcion,item.categorias,item.precio,item.stock,item.id)" class="nombre">{{item.nombre}}</p>
+                <p class="categoria">{{item.categorias}}</p>
+                <p class="precio">{{item.precio}}</p>
+                <p class="stock">Stock:{{item.stock}}</p>
+                <div *ngIf="this.serv.conectado;else sinSesionCompra">
+                    <button *ngIf="item.stock!=0;else noDisponible" type="button" (click)="anadirCarrito(item.id)">Añadir al carrito</button>
+                    <ng-template #noDisponible>
+                        <button id="noDisponible" type="button">No disponible</button>
+                    </ng-template>
+                  </div>
+                  <ng-template #sinSesionCompra>
+                      <button id="sinSesion" type="button">Inicie sesión para comprar</button>
+                  </ng-template>
+                </div>
+        
+                <div class="producto" *ngIf="item.categorias=='Autos' && this.serv.autos">
+                    <img src={{item.imagen}} style="width:100%" (click)="clickProducto(item.nombre,item.descripcion,item.categorias,item.precio,item.stock,item.id)">
+                    <p (click)="clickProducto(item.nombre,item.descripcion,item.categorias,item.precio,item.stock,item.id)" class="nombre">{{item.nombre}}</p>
+                    <p class="categoria">{{item.categorias}}</p>
+                    <p class="precio">{{item.precio}}</p>
+                    <p class="stock">Stock:{{item.stock}}</p>
+                    <div *ngIf="this.serv.conectado;else sinSesionCompra">
+                        <button *ngIf="item.stock!=0;else noDisponible" type="button" (click)="anadirCarrito(item.id)">Añadir al carrito</button>
+                        <ng-template #noDisponible>
+                            <button id="noDisponible" type="button">No disponible</button>
+                        </ng-template>
+                      </div>
+                      <ng-template #sinSesionCompra>
+                          <button id="sinSesion" type="button">Inicie sesión para comprar</button>
+                      </ng-template>
+                    </div>
+        
+                    <div class="producto" *ngIf="item.categorias=='Hogar' && this.serv.hogar">
+                        <img src={{item.imagen}} style="width:100%" (click)="clickProducto(item.nombre,item.descripcion,item.categorias,item.precio,item.stock,item.id)">
+                        <p (click)="clickProducto(item.nombre,item.descripcion,item.categorias,item.precio,item.stock,item.id)" class="nombre">{{item.nombre}}</p>
+                        <p class="categoria">{{item.categorias}}</p>
+                        <p class="precio">{{item.precio}}</p>
+                        <p class="stock">Stock:{{item.stock}}</p>
+                        <div *ngIf="this.serv.conectado;else sinSesionCompra">
+                            <button *ngIf="item.stock!=0;else noDisponible" type="button" (click)="anadirCarrito(item.id)">Añadir al carrito</button>
+                            <ng-template #noDisponible>
+                                <button id="noDisponible" type="button">No disponible</button>
+                            </ng-template>
+                          </div>
+                          <ng-template #sinSesionCompra>
+                              <button id="sinSesion" type="button">Inicie sesión para comprar</button>
+                          </ng-template>
+                        </div>
+        </div>
+    </div>
+</div>
+
+</body>
+

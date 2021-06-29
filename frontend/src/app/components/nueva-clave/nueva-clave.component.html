@@ -1,0 +1,15 @@
+<body>
+
+    <form [formGroup]="cambiar"  (ngSubmit)="cambiarClave()">
+        <div id="inicioSesion">
+            Ingrese nueva contraseña:
+            <br>
+            <input formControlName="clave">
+            <br>
+            <button>Enviar</button>
+        </div>
+    </form>
+    
+    <button id="bVolver" (click)="volver()">Volver</button>
+    
+    </body>
